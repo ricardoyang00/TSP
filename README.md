@@ -3,8 +3,6 @@
 ## Description
 This project enables comparison between different solutions for the Traveling Salesman Problem (TSP), a renowned challenge in combinatorial optimization. The objective is to determine the shortest route that visits each city exactly once and returns to the starting city. Being [NP-hard](https://en.wikipedia.org/wiki/NP-hardness), the TSP lacks a polynomial-time solution algorithm.
 
-[RESULTS SHEET](https://docs.google.com/spreadsheets/d/1I6d1NvNj34K96kJRol0O1ccQ8HP2-nnEXvQ0IW0alAs/edit?usp=sharing)
-
 ## Algorithms
 
 ### Backtracking
@@ -48,15 +46,47 @@ We tailored the Triangular Approximation, Nearest Neighbor Algorithm (NNA), K-Ne
 
 With these adjustments, our algorithms provide solutions even when the graphs __may not be fully connected__, by returning `feasible` or `not feasible`, ensuring that a solution is always provided.
 
-## Reflection
-The Ant Colony Optimization (ACO) algorithm performs well on larger datasets and is able to find good solutions due to its probabilistic nature and the use of both pheromone trails and heuristic information. However, the time complexity is dependent on the number of ants and iterations, which can be a limiting factor for very large problems or for a very high number of ants or iterations.
-With a greater number of ants and iterations, we could potentially get more optimal solutions, but the time to run the algorithm would also increase.
+## Results
+Comparison of the time and costs of different TSP algorithms:
 
-Both the Triangular Approximation and Nearest Neighbor Algorithms demonstrate speed and efficacy, with the NNA edging slightly ahead providing marginally superior results in large dataset. Overall, both algorithms perfom incredibly well
+<p align="center"><img src="docs/images/costs.png"></p>
+<p align="center"><b>Distance (m) - Considering graphs as how they are</b></p>
+
+> k-nearest neighbor is by default K = 1
+> 
+> *ACO considering 10 ants, 10 iterations, α = 1.0, β = 5.0, evaporationRate = 0.5
+> 
+> blank cells indicates N/A or TLE
+
+<br>
+
+<p align="center"><img src="docs/images/costs-fully.png"></p>
+<p align="center"><b>Distance (m) - Considering graphs as fully connected</b></p>
+
+> This table is intended to record the results of algorithms capable of providing solutions for non-fully connected graphs, utilizing the [Haversine distance formula](https://en.wikipedia.org/wiki/Haversine_formula).
+
+<br>
+
+<p align="center"><img src="docs/images/time.png"></p>
+<p align="center"><b>Average Execution Time (s)</b></p>
+
+## Reflection
+
+Both the Triangular Approximation and Nearest Neighbor Algorithms (NNA) demonstrate speed and efficacy, with the NNA edging slightly ahead providing marginally superior results in large dataset. Overall, both algorithms perfom incredibly well
 
 Even though the 3-opt heuristic takes more time than the 2-opt heuristic, it doesn't consistently yield better results. From this observation, we can conclude that it's not an effective algorithm in this scenario.
 
 The 2-Opt is very good for small dataset which always provides a better solution than Nearest Neighbor Algorithm (NNA). However, as the dataset grows larger, it becomes impractial due to its exponential increase in execution time.
+
+The Ant Colony Optimization (ACO) algorithm performs well on larger datasets and is able to find good solutions due to its probabilistic nature and the use of both pheromone trails and heuristic information. However, the time complexity is dependent on the number of ants and iterations, which can be a limiting factor for very large problems or for a very high number of ants or iterations.
+With a greater number of ants and iterations, we could potentially get more optimal solutions, but the time to run the algorithm would also increase.
+
+## Documentation
+Find the complete documentation in the [Doxygen HTML documentation](docs/output/index.html).
+
+## Main Contributors
+- Ricardo Yang (up202208465@fe.up.pt)
+- Bruno Huang (up202207517@fe.up.pt)
 
 <br>
 
