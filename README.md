@@ -3,6 +3,15 @@
 ## Description
 This project enables comparison between different solutions for the Traveling Salesman Problem (TSP), a renowned challenge in combinatorial optimization. The objective is to determine the shortest route that visits each city exactly once and returns to the starting city. Being [NP-hard](https://en.wikipedia.org/wiki/NP-hardness), the TSP lacks a polynomial-time solution algorithm.
 
+## Dataset
+There are provided datasets in the 'data' folder, which are used to test the algorithms.
+In total, there are 18 graphs: 3 are small __toy graphs__, 12 are medium-sized __fully connected graphs__ and 3 are scaled-down versions of __real world graphs__.
+
+Regarding the 3 real-world graphs in this dataset we have the following edge and node statistics:
+- __Graph 1__: 1K nodes and ~ 500K edges
+- __Graph 2__: 5K nodes and ~ 4M edges
+- __Graph 3__: 10K nodes and ~ 20M edges
+
 ## Algorithms
 
 ### Backtracking
