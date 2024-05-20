@@ -55,6 +55,8 @@ Comparison of the time and costs of different TSP algorithms:
 > k-nearest neighbor is by default K = 1
 > 
 > *ACO considering 10 ants, 10 iterations, α = 1.0, β = 5.0, evaporationRate = 0.5
+> 
+> blank cells indicates N/A or TLE
 
 <br>
 
@@ -79,3 +81,13 @@ The 2-Opt is very good for small dataset which always provides a better solution
 The Ant Colony Optimization (ACO) algorithm performs well on larger datasets and is able to find good solutions due to its probabilistic nature and the use of both pheromone trails and heuristic information. However, the time complexity is dependent on the number of ants and iterations, which can be a limiting factor for very large problems or for a very high number of ants or iterations.
 With a greater number of ants and iterations, we could potentially get more optimal solutions, but the time to run the algorithm would also increase.
 
+## Documentation
+Find the complete documentation in the [Doxygen HTML documentation](docs/output/index.html).
+
+## Main Contributors
+- Ricardo Yang (up202208465@fe.up.pt)
+- Bruno Huang (up202207517@fe.up.pt)
+
+<br>
+
+__This project was developed for [DA](https://sigarra.up.pt/feup/en/UCURR_GERAL.FICHA_UC_VIEW?pv_ocorrencia_id=520321) at @FEUP__
