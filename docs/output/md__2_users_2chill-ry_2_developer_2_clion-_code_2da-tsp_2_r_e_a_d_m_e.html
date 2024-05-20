@@ -79,69 +79,109 @@ $(function() {
 <h1><a class="anchor" id="autotoc_md1"></a>
 Description</h1>
 <p>This project enables comparison between different solutions for the Traveling Salesman Problem (<a class="el" href="class_t_s_p.html" title="Solves the Travelling Salesman Problem.">TSP</a>), a renowned challenge in combinatorial optimization. The objective is to determine the shortest route that visits each city exactly once and returns to the starting city. Being <a href="https://en.wikipedia.org/wiki/NP-hardness">NP-hard</a>, the <a class="el" href="class_t_s_p.html" title="Solves the Travelling Salesman Problem.">TSP</a> lacks a polynomial-time solution algorithm.</p>
-<p><a href="https://docs.google.com/spreadsheets/d/1I6d1NvNj34K96kJRol0O1ccQ8HP2-nnEXvQ0IW0alAs/edit?usp=sharing">RESULTS SHEET</a></p>
 <h1><a class="anchor" id="autotoc_md2"></a>
+Dataset</h1>
+<p>There are provided datasets in the 'data' folder, which are used to test the algorithms. In total, there are 18 graphs: 3 are small <b>toy graphs</b>, 12 are medium-sized <b>fully connected graphs</b> and 3 are scaled-down versions of <b>real world graphs</b>.</p>
+<p>Regarding the 3 real-world graphs in this dataset we have the following edge and node statistics:</p><ul>
+<li><b><a class="el" href="class_graph.html" title="Represents the TSP network.">Graph</a> 1</b>: 1K nodes and ~ 500K edges</li>
+<li><b><a class="el" href="class_graph.html" title="Represents the TSP network.">Graph</a> 2</b>: 5K nodes and ~ 4M edges</li>
+<li><b><a class="el" href="class_graph.html" title="Represents the TSP network.">Graph</a> 3</b>: 10K nodes and ~ 20M edges</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md3"></a>
 Algorithms</h1>
-<h2><a class="anchor" id="autotoc_md3"></a>
+<h2><a class="anchor" id="autotoc_md4"></a>
 Backtracking</h2>
 <ul>
 <li>Brute force algorithm that explores all possible routes.</li>
 <li><b>🚀 Time Complexity:</b> O(V!), where V is the number of vertices in the graph.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md4"></a>
+<h2><a class="anchor" id="autotoc_md5"></a>
 Triangular Approximation</h2>
 <ul>
 <li>Creates a MST using Prim's algorithm and traverses it using a DFS.</li>
 <li><b>🚀 Time Complexity:</b> O((V+E) logV), where V is the number of vertices and E is the number of edges in the graph.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md5"></a>
+<h2><a class="anchor" id="autotoc_md6"></a>
 Nearest Neighbor</h2>
 <ul>
 <li>Greedy algorithm that selects the nearest unvisited vertex to the current vertex.</li>
 <li><b>🚀 Time Complexity:</b> O(V^2), where V is the number of vertices in the graph.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md6"></a>
+<h2><a class="anchor" id="autotoc_md7"></a>
 K-Nearest Neighbor</h2>
 <ul>
 <li>Greedy algorithm that selects the k nearest unvisited vertices to the current vertex.</li>
 <li><b>🚀 Time Complexity:</b> O(V^2 * logV + V * k), where V is the number of vertices in the graph. <br  />
  💡 Tips: Increasing the value of K provides better chance to find a feasible path. However, the larger is K, the longer computation time is to complete the traversal.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md7"></a>
+<h2><a class="anchor" id="autotoc_md8"></a>
 2-Opt</h2>
 <ul>
 <li>Give a solution path and iteratively swaps two edges to reduce the total distance of the path.</li>
 <li><b>🚀 Time Complexity:</b> O(V^2), where V is the number of vertices in the graph.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md8"></a>
+<h2><a class="anchor" id="autotoc_md9"></a>
 3-Opt</h2>
 <ul>
 <li>Give a solution path and iteratively swaps three edges to reduce the total distance of the path.</li>
 <li><b>🚀 Time Complexity:</b> O(V^3), where V is the number of vertices in the graph. <br  />
  📝 Note: The Opt algorithms that we implemented, uses as initial solution the nearest neighbor algorithm (NNA). Which means that the time complexity of the Opt algorithms is <code>max(Opt, NNA)</code>.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md9"></a>
+<h2><a class="anchor" id="autotoc_md10"></a>
 Held-Karp</h2>
 <ul>
 <li>Dynamic programming algorithm that uses the concept of state and transition.</li>
 <li><b>🚀 Time Complexity:</b> O(2^V * V^2), where V is the number of vertices in the graph.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md10"></a>
+<h2><a class="anchor" id="autotoc_md11"></a>
 Ant Colony Optimization (ACO)</h2>
 <ul>
 <li>Probabilistic technique that simulates the behavior of ants in finding paths from the colony to food.</li>
 <li><b>🚀 Time Complexity:</b> O(V^2 * numAnts * numIterations), where V is the number of vertices in the graph, numAnts is the number of ants, and numIterations is the number of iterations.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md11"></a>
+<h2><a class="anchor" id="autotoc_md12"></a>
 TSP in Real World</h2>
 <p>We tailored the Triangular Approximation, Nearest Neighbor Algorithm (NNA), K-Nearest Neighbor (K-NN), and Ant Colony Optimization (ACO) to tackle real-world <a class="el" href="class_t_s_p.html" title="Solves the Travelling Salesman Problem.">TSP</a> scenarios. Users now have the flexibility to <b>select</b> the starting vertex and determine whether to treat the graph as fully connected or not.</p>
 <p>With these adjustments, our algorithms provide solutions even when the graphs <b>may not be fully connected</b>, by returning <code>feasible</code> or <code>not feasible</code>, ensuring that a solution is always provided.</p>
-<h1><a class="anchor" id="autotoc_md12"></a>
+<h1><a class="anchor" id="autotoc_md13"></a>
+Results</h1>
+<p>Comparison of the time and costs of different <a class="el" href="class_t_s_p.html" title="Solves the Travelling Salesman Problem.">TSP</a> algorithms:</p>
+<p><img src="docs/images/costs.png" alt="" class="inline"/></p>
+<p><b>Distance (m) - Considering graphs as how they are</b></p>
+<blockquote class="doxtable">
+<p>&zwj;k-nearest neighbor is by default K = 1</p>
+<p>*ACO considering 10 ants, 10 iterations, α = 1.0, β = 5.0, evaporationRate = 0.5</p>
+<p>blank cells indicates N/A or TLE </p>
+</blockquote>
+<p><br  />
+</p>
+<p><img src="docs/images/costs-fully.png" alt="" class="inline"/></p>
+<p><b>Distance (m) - Considering graphs as fully connected</b></p>
+<blockquote class="doxtable">
+<p>&zwj;This table is intended to record the results of algorithms capable of providing solutions for non-fully connected graphs, utilizing the <a href="https://en.wikipedia.org/wiki/Haversine_formula">Haversine distance formula</a>. </p>
+</blockquote>
+<p><br  />
+</p>
+<p><img src="docs/images/time.png" alt="" class="inline"/></p>
+<p><b>Average Execution Time (s)</b></p>
+<h1><a class="anchor" id="autotoc_md14"></a>
 Reflection</h1>
-<p>The Ant Colony Optimization (ACO) algorithm performs well on larger datasets and is able to find good solutions due to its probabilistic nature and the use of both pheromone trails and heuristic information. However, the time complexity is dependent on the number of ants and iterations, which can be a limiting factor for very large problems or for a very high number of ants or iterations. With a greater number of ants and iterations, we could potentially get more optimal solutions, but the time to run the algorithm would also increase.</p>
-<p>Both the Triangular Approximation and Nearest Neighbor Algorithms demonstrate speed and efficacy, with the NNA edging slightly ahead providing marginally superior results in large dataset. Overall, both algorithms perfom incredibly well</p>
+<p>Both the Triangular Approximation and Nearest Neighbor Algorithms (NNA) demonstrate speed and efficacy, with the NNA edging slightly ahead providing marginally superior results in large dataset. Overall, both algorithms perfom incredibly well</p>
+<p>Even though the 3-opt heuristic takes more time than the 2-opt heuristic, it doesn't consistently yield better results. From this observation, we can conclude that it's not an effective algorithm in this scenario.</p>
 <p>The 2-Opt is very good for small dataset which always provides a better solution than Nearest Neighbor Algorithm (NNA). However, as the dataset grows larger, it becomes impractial due to its exponential increase in execution time.</p>
-<p>Even though the 3-opt heuristic takes more time than the 2-opt heuristic, it doesn't consistently yield better results. From this observation, we can conclude that it's not an effective algorithm in this scenario. </p>
+<p>The Ant Colony Optimization (ACO) algorithm performs well on larger datasets and is able to find good solutions due to its probabilistic nature and the use of both pheromone trails and heuristic information. However, the time complexity is dependent on the number of ants and iterations, which can be a limiting factor for very large problems or for a very high number of ants or iterations. With a greater number of ants and iterations, we could potentially get more optimal solutions, but the time to run the algorithm would also increase.</p>
+<h1><a class="anchor" id="autotoc_md15"></a>
+Documentation</h1>
+<p>Find the complete documentation in the <a href="docs/output/index.html">Doxygen HTML documentation</a>.</p>
+<h1><a class="anchor" id="autotoc_md16"></a>
+Main Contributors</h1>
+<ul>
+<li>Ricardo Yang (<a href="#" onclick="location.href='mai'+'lto:'+'up2'+'02'+'208'+'46'+'5@f'+'e.'+'up.'+'pt'; return false;">up202<span class="obfuscator">.nosp@m.</span>2084<span class="obfuscator">.nosp@m.</span>65@fe<span class="obfuscator">.nosp@m.</span>.up.<span class="obfuscator">.nosp@m.</span>pt</a>)</li>
+<li>Bruno Huang (<a href="#" onclick="location.href='mai'+'lto:'+'up2'+'02'+'207'+'51'+'7@f'+'e.'+'up.'+'pt'; return false;">up202<span class="obfuscator">.nosp@m.</span>2075<span class="obfuscator">.nosp@m.</span>17@fe<span class="obfuscator">.nosp@m.</span>.up.<span class="obfuscator">.nosp@m.</span>pt</a>)</li>
+</ul>
+<p><br  />
+</p>
+<p>__This project was developed for <a href="https://sigarra.up.pt/feup/en/UCURR_GERAL.FICHA_UC_VIEW?pv_ocorrencia_id=520321">DA</a> at @FEUP__ </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
