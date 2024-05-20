@@ -12,6 +12,17 @@ Regarding the 3 real-world graphs in this dataset we have the following edge and
 - __Graph 2__: 5K nodes and ~ 4M edges
 - __Graph 3__: 10K nodes and ~ 20M edges
 
+### How to download the dataset
+1. Clone the repository
+2. Navigate to the 'data' folder
+```bash
+cd data
+```
+3. Unzip the dataset
+```bash
+unzip Real_world_Graphs.zip
+```
+
 ## Algorithms
 
 ### Backtracking
