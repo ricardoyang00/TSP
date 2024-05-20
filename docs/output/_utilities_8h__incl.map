@@ -1,0 +1,11 @@
+<map id="Utilities.h" name="Utilities.h">
+<area shape="rect" id="Node000001" title="Contains utility functions for string manipulation and distance calculation." alt="" coords="148,5,225,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,77,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="163,34,81,74,78,69,161,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="101,79,176,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="181,33,157,67,153,64,176,30"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="200,79,269,105"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="196,30,220,64,215,67,192,33"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="292,79,350,105"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="210,29,286,69,284,74,208,34"/>
+</map>
