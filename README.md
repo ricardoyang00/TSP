@@ -110,4 +110,4 @@ Find the complete documentation in the [Doxygen HTML documentation](docs/output/
 
 <br>
 
-__This project was developed for [DA](https://sigarra.up.pt/feup/en/UCURR_GERAL.FICHA_UC_VIEW?pv_ocorrencia_id=520321) at @FEUP__
+__This project was developed for [DA](https://sigarra.up.pt/feup/en/UCURR_GERAL.FICHA_UC_VIEW?pv_ocorrencia_id=520321) at @FEUP in May 2023__
