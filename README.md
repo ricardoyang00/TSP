@@ -104,10 +104,6 @@ With a greater number of ants and iterations, we could potentially get more opti
 ## Documentation
 Find the complete documentation in the [Doxygen HTML documentation](docs/output/index.html).
 
-## Main Contributors
-- Ricardo Yang
-- Bruno Huang
-
 <br>
 
 __This project was developed for [DA](https://sigarra.up.pt/feup/en/UCURR_GERAL.FICHA_UC_VIEW?pv_ocorrencia_id=520321) at @FEUP in May 2023__
